@@ -1,11 +1,5 @@
 import React from 'react';
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '../ui/card';
+import { Card, CardDescription, CardHeader, CardTitle } from '../ui/card';
 import { Get_UhtreeQuery } from '@/gql/graphql';
 import { cn } from '@/lib/utils';
 
@@ -22,23 +16,11 @@ export default function UhCard({
   const uh = data?.uhById;
 
   return (
-    <Card className={cn('w-64', className)} {...props}>
+    <Card className={cn('container', className)} {...props}>
       <CardHeader>
         <CardTitle>{uh?.UH}</CardTitle>
         <CardDescription>{uh?.description}</CardDescription>
       </CardHeader>
-      <CardContent>
-        <p>
-          {uh?.active
-            ? 'Ativo até: ' + (uh.VIG_FIM as string).slice(0, 10)
-            : 'Não'}
-        </p>
-        <p>Responsável: {uh?.contact?.name?.text} </p>
-        <p>
-          {uh?.contact?.telecom && 'Contacto: ' + uh.contact.telecom[0]?.value}
-        </p>
-        <p>Pertence a: {uh?.partOf?.display}</p>
-      </CardContent>
     </Card>
   );
 }

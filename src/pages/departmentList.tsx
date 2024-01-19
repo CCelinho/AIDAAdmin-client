@@ -3,7 +3,7 @@ import DataTable from '@/components/ui/data-table';
 import listDepartments from '../hooks/listDepartments';
 
 export default function DepartmentList() {
-  const { error, loading, deps } = listDepartments();
+  const { error, loading, deps } = listDepartments(0, 100);
 
   if (loading) {
     return <div>Loading ...</div>;
