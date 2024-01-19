@@ -1,46 +1,23 @@
 import React from 'react';
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '../ui/card';
-import { Get_DepartmentQuery } from '@/gql/graphql';
+import { Card, CardHeader, CardTitle } from '../ui/card';
+import { Service } from '@/gql/graphql';
 import { cn } from '@/lib/utils';
 
-interface DepartmentCardProps {
-  data: Get_DepartmentQuery | undefined;
+interface ServiceCardProps {
+  data: Service | undefined | null;
   className?: string;
 }
 
-export default function DepartmentCard({
+export default function ServiceCard({
   data,
   className,
   ...props
-}: React.PropsWithChildren<DepartmentCardProps>) {
-  const dep = data?.departmentById;
-
+}: React.PropsWithChildren<ServiceCardProps>) {
   return (
-    <Card className={cn('w-[1200px]', className)} {...props}>
+    <Card className={cn('container', className)} {...props}>
       <CardHeader>
-        <CardTitle>{dep?.DES_DEPARTAMENTO}</CardTitle>
-        <CardDescription>{dep?.description}</CardDescription>
+        <CardTitle>{data?.DES_SERVICO}</CardTitle>
       </CardHeader>
-      <CardContent>
-        <p>Código: {dep?.COD_DEPARTAMENTO}</p>
-        <p>
-          {dep?.active
-            ? 'Ativo até: ' + (dep.VIG_FIM as string).slice(0, 10)
-            : 'Não'}
-        </p>
-        <p>Responsável: {dep?.contact?.name?.text} </p>
-        <p>
-          {dep?.contact?.telecom &&
-            'Contacto: ' + dep.contact.telecom[0]?.value}
-        </p>
-        <p>Pertence a: {dep?.partOf?.display}</p>
-      </CardContent>
     </Card>
   );
 }

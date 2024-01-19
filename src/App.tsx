@@ -5,7 +5,6 @@ import UHList from './pages/uhList';
 import ServiceList from './pages/serviceList';
 import UnitList from './pages/unitList';
 import SpecialtyList from './pages/specialtyList';
-import SingleDepartment from './pages/singleDepartment';
 import treePage from './pages/treePage';
 
 function App() {
@@ -18,7 +17,6 @@ function App() {
         <Route path="/services" Component={ServiceList} />
         <Route path="/units" Component={UnitList} />
         <Route path="/specialties" Component={SpecialtyList} />
-        <Route path="/department/:id" Component={SingleDepartment} />
         <Route path="/uh-tree/:id" Component={treePage} />
       </Routes>
     </>
