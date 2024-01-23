@@ -1,12 +1,13 @@
 import { columns } from '../components/table-columns/departmentColumns';
 import DataTable from '@/components/ui/data-table';
 import listDepartments from '../hooks/listDepartments';
+import SpinnerLoader from '@/components/loaders/spinner';
 
 export default function DepartmentList() {
   const { error, loading, deps } = listDepartments(0, 100);
 
   if (loading) {
-    return <div>Loading ...</div>;
+    return <SpinnerLoader />;
   }
 
   if (error) {

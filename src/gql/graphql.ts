@@ -16,6 +16,7 @@ export type Scalars = {
   Float: { input: number; output: number; }
   Date: { input: any; output: any; }
   ObjectId: { input: any; output: any; }
+  UUID: { input: any; output: any; }
 };
 
 export type Address = {
@@ -78,11 +79,13 @@ export type Department = Organization & {
   contact?: Maybe<ExtendedContactDetail>;
   description?: Maybe<Scalars['String']['output']>;
   endpoint?: Maybe<Reference>;
+  errorflag?: Maybe<Scalars['Boolean']['output']>;
   identifier?: Maybe<Identifier>;
   name?: Maybe<Scalars['String']['output']>;
   parents?: Maybe<Array<Uh>>;
   partOf?: Maybe<Reference>;
   type?: Maybe<CodeableConcept>;
+  uuid?: Maybe<Scalars['UUID']['output']>;
 };
 
 export type ExtendedContactDetail = {
@@ -127,10 +130,12 @@ export type Organization = {
   contact?: Maybe<ExtendedContactDetail>;
   description?: Maybe<Scalars['String']['output']>;
   endpoint?: Maybe<Reference>;
+  errorflag?: Maybe<Scalars['Boolean']['output']>;
   identifier?: Maybe<Identifier>;
   name?: Maybe<Scalars['String']['output']>;
   partOf?: Maybe<Reference>;
   type?: Maybe<CodeableConcept>;
+  uuid?: Maybe<Scalars['UUID']['output']>;
 };
 
 export type Period = {
@@ -256,11 +261,13 @@ export type Service = Organization & {
   contact?: Maybe<ExtendedContactDetail>;
   description?: Maybe<Scalars['String']['output']>;
   endpoint?: Maybe<Reference>;
+  errorflag?: Maybe<Scalars['Boolean']['output']>;
   identifier?: Maybe<Identifier>;
   name?: Maybe<Scalars['String']['output']>;
   parent?: Maybe<Department>;
   partOf?: Maybe<Reference>;
   type?: Maybe<CodeableConcept>;
+  uuid?: Maybe<Scalars['UUID']['output']>;
 };
 
 export type Specialty = Organization & {
@@ -280,11 +287,13 @@ export type Specialty = Organization & {
   contact?: Maybe<ExtendedContactDetail>;
   description?: Maybe<Scalars['String']['output']>;
   endpoint?: Maybe<Reference>;
+  errorflag?: Maybe<Scalars['Boolean']['output']>;
   identifier?: Maybe<Identifier>;
   name?: Maybe<Scalars['String']['output']>;
   parent?: Maybe<Unit>;
   partOf?: Maybe<Reference>;
   type?: Maybe<CodeableConcept>;
+  uuid?: Maybe<Scalars['UUID']['output']>;
 };
 
 export type Uh = Organization & {
@@ -302,10 +311,12 @@ export type Uh = Organization & {
   contact?: Maybe<ExtendedContactDetail>;
   description?: Maybe<Scalars['String']['output']>;
   endpoint?: Maybe<Reference>;
+  errorflag?: Maybe<Scalars['Boolean']['output']>;
   identifier?: Maybe<Identifier>;
   name?: Maybe<Scalars['String']['output']>;
   partOf?: Maybe<Reference>;
   type?: Maybe<CodeableConcept>;
+  uuid?: Maybe<Scalars['UUID']['output']>;
 };
 
 export type Unit = Organization & {
@@ -324,11 +335,13 @@ export type Unit = Organization & {
   contact?: Maybe<ExtendedContactDetail>;
   description?: Maybe<Scalars['String']['output']>;
   endpoint?: Maybe<Reference>;
+  errorflag?: Maybe<Scalars['Boolean']['output']>;
   identifier?: Maybe<Identifier>;
   name?: Maybe<Scalars['String']['output']>;
   parent?: Maybe<Service>;
   partOf?: Maybe<Reference>;
   type?: Maybe<CodeableConcept>;
+  uuid?: Maybe<Scalars['UUID']['output']>;
 };
 
 export type Get_DepartmentsQueryVariables = Exact<{

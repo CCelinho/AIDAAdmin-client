@@ -22,13 +22,13 @@ const listUnits = (offset?: number, limit?: number) => {
     }
   `);
 
-  const { error, loading, data } = useQuery(GET_UNITS, {
+  const { error, loading, data, fetchMore } = useQuery(GET_UNITS, {
     variables: { offset: offset, limit: limit },
   });
 
   const unis = data?.units || [];
 
-  return { error, loading, unis };
+  return { error, loading, unis, fetchMore };
 };
 
 export default listUnits;

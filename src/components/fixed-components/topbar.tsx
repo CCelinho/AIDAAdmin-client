@@ -5,7 +5,7 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   navigationMenuTriggerStyle,
-} from './ui/navigation-menu';
+} from '../ui/navigation-menu';
 
 export function Topbar() {
   return (

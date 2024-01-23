@@ -22,13 +22,13 @@ const listSpecialties = (offset?: number, limit?: number) => {
     }
   `);
 
-  const { error, loading, data } = useQuery(GET_SPECIALTIES, {
+  const { error, loading, data, fetchMore } = useQuery(GET_SPECIALTIES, {
     variables: { offset: offset, limit: limit },
   });
 
   const spes = data?.specialties || [];
 
-  return { error, loading, spes };
+  return { error, loading, spes, fetchMore };
 };
 
 export default listSpecialties;

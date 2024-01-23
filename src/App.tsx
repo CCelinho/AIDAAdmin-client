@@ -1,11 +1,12 @@
-import { Topbar } from './components/topbar';
+import { Topbar } from './components/fixed-components/topbar';
 import { Route, Routes } from 'react-router-dom';
 import DepartmentList from './pages/departmentList';
 import UHList from './pages/uhList';
 import ServiceList from './pages/serviceList';
-import UnitList from './pages/unitList';
 import SpecialtyList from './pages/specialtyList';
 import treePage from './pages/treePage';
+import UnitList from './pages/unitList';
+import TreePageCopy from './pages/treePageCopy';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/units" Component={UnitList} />
         <Route path="/specialties" Component={SpecialtyList} />
         <Route path="/uh-tree/:id" Component={treePage} />
+        <Route path="/uh-tree-copy/:id" Component={TreePageCopy} />
       </Routes>
     </>
   );

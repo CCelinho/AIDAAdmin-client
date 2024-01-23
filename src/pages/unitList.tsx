@@ -1,12 +1,13 @@
+import SpinnerLoader from '@/components/loaders/spinner';
 import { columns } from '../components/table-columns/unitColumns';
 import DataTable from '@/components/ui/data-table';
-import listUnits from '../hooks/listUnits';
+import listUnits from '@/hooks/listUnits';
 
 export default function UnitList() {
   const { error, loading, unis } = listUnits();
 
   if (loading) {
-    return <div>Loading ...</div>;
+    return <SpinnerLoader />;
   }
 
   if (error) {

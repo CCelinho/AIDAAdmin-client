@@ -10,6 +10,9 @@ import {
 import { Button } from '../ui/button';
 import { ArrowUpDown, MoreHorizontal } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import treeIcon from '../../assets/tree.svg';
+import exportIcon from '../../assets/export.svg';
+import eyeIcon from '../../assets/eye.svg';
 
 export const columns: ColumnDef<Service | unknown>[] = [
   {
@@ -54,22 +57,39 @@ export const columns: ColumnDef<Service | unknown>[] = [
       const service = row.original as Service;
 
       return (
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button variant="ghost" className="h-8 w-8 p-0">
-              <span className="sr-only">Open menu</span>
-              <MoreHorizontal className="h-4 w-4" />
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="end">
-            <DropdownMenuLabel>Opções</DropdownMenuLabel>
-            <Link to={`/Service/${service._id}/`}>
-              <DropdownMenuItem>Ver serviço</DropdownMenuItem>
+        <div>
+          <Button variant={'outline'} size={'smicon'} className="mr-1" asChild>
+            <Link to={`/service/${service._id}`}>
+              <img src={eyeIcon} alt="O"></img>
             </Link>
-            <DropdownMenuItem>Ver serviços</DropdownMenuItem>
-            <DropdownMenuItem>Exportar</DropdownMenuItem>
-          </DropdownMenuContent>
-        </DropdownMenu>
+          </Button>
+          <Button variant={'outline'} size={'smicon'} className="mx-1">
+            <Link to={`/service-tree/${service._id}`}>
+              <img src={treeIcon} alt="O"></img>
+            </Link>
+          </Button>
+          <Button variant={'outline'} size={'smicon'} className="mx-1">
+            <img src={exportIcon} alt="O"></img>
+          </Button>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button
+                variant="ghost"
+                size={'smicon'}
+                className="ml-1 justify-center"
+              >
+                <span className="sr-only">Open menu</span>
+                <MoreHorizontal />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              <DropdownMenuLabel>Opções</DropdownMenuLabel>
+              <Link to={`/service/${service._id}/`}>
+                <DropdownMenuItem>Ver Serviço</DropdownMenuItem>
+              </Link>
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </div>
       );
     },
   },

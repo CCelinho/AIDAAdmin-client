@@ -1,8 +1,8 @@
 import Clip from '@/components/loaders/clip';
-import UHTree from '@/components/tree';
+import UHTree from '@/components/tree copy';
 import useUHTree from '@/hooks/useUHTree';
 
-const TreePage: React.FC = () => {
+const TreePageCopy: React.FC = () => {
   const { error, loading, data } = useUHTree();
 
   if (loading) {
@@ -23,4 +23,4 @@ const TreePage: React.FC = () => {
   }
 };
 
-export default TreePage;
+export default TreePageCopy;

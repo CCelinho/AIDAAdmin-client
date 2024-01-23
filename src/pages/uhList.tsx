@@ -1,12 +1,13 @@
 import { columns } from '../components/table-columns/uhColumns';
 import DataTable from '@/components/ui/data-table';
 import listUHs from '../hooks/listUHs';
+import SpinnerLoader from '@/components/loaders/spinner';
 
 export default function UHList() {
   const { error, loading, uhs } = listUHs();
 
   if (loading) {
-    return <div>Loading ...</div>;
+    return <SpinnerLoader />;
   }
 
   if (error) {

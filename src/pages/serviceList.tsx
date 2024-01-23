@@ -1,12 +1,13 @@
 import { columns } from '../components/table-columns/serviceColumns';
 import DataTable from '@/components/ui/data-table';
 import listServices from '../hooks/listServices';
+import SpinnerLoader from '@/components/loaders/spinner';
 
 export default function ServiceList() {
   const { error, loading, sers } = listServices();
 
   if (loading) {
-    return <div>Loading ...</div>;
+    return <SpinnerLoader />;
   }
 
   if (error) {
