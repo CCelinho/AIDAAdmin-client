@@ -1,10 +1,10 @@
 import React from 'react';
-import { Card, CardDescription, CardHeader, CardTitle } from '../ui/card';
-import { Get_UhtreeQuery } from '@/gql/graphql';
+import { Card, CardHeader, CardTitle } from '../ui/card';
+import { Get_UhrootQuery } from '@/gql/graphql';
 import { cn } from '@/lib/utils';
 
 interface UhCardProps {
-  data: Get_UhtreeQuery | undefined;
+  data: Get_UhrootQuery | undefined;
   className?: string;
 }
 
@@ -19,7 +19,6 @@ export default function UhCard({
     <Card className={cn('container', className)} {...props}>
       <CardHeader>
         <CardTitle>{uh?.UH}</CardTitle>
-        <CardDescription>{uh?.description}</CardDescription>
       </CardHeader>
     </Card>
   );

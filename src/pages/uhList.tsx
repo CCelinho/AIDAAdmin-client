@@ -1,6 +1,6 @@
 import { columns } from '../components/table-columns/uhColumns';
 import DataTable from '@/components/ui/data-table';
-import listUHs from '../hooks/listUHs';
+import listUHs from '../hooks/tables/listUHs';
 import SpinnerLoader from '@/components/loaders/spinner';
 
 export default function UHList() {

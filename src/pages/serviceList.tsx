@@ -1,6 +1,6 @@
 import { columns } from '../components/table-columns/serviceColumns';
 import DataTable from '@/components/ui/data-table';
-import listServices from '../hooks/listServices';
+import listServices from '../hooks/tables/listServices';
 import SpinnerLoader from '@/components/loaders/spinner';
 
 export default function ServiceList() {

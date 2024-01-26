@@ -8,7 +8,6 @@ const listUnits = (offset?: number, limit?: number) => {
         _id
         COD_UNIDADE
         DES_UNIDADE
-        active
         partOf {
           display
         }
@@ -17,7 +16,6 @@ const listUnits = (offset?: number, limit?: number) => {
             text
           }
         }
-        VIG_FIM
       }
     }
   `);

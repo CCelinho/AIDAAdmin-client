@@ -4,9 +4,9 @@ import DepartmentList from './pages/departmentList';
 import UHList from './pages/uhList';
 import ServiceList from './pages/serviceList';
 import SpecialtyList from './pages/specialtyList';
-import treePage from './pages/treePage';
+import UHTreePage from './pages/uhTreePage';
 import UnitList from './pages/unitList';
-import TreePageCopy from './pages/treePageCopy';
+import DeptTreePage from './pages/deptTreePage';
 
 function App() {
   return (
@@ -18,8 +18,8 @@ function App() {
         <Route path="/services" Component={ServiceList} />
         <Route path="/units" Component={UnitList} />
         <Route path="/specialties" Component={SpecialtyList} />
-        <Route path="/uh-tree/:id" Component={treePage} />
-        <Route path="/uh-tree-copy/:id" Component={TreePageCopy} />
+        <Route path="/uh-tree/:id" Component={UHTreePage} />
+        <Route path="/department-tree/:id" Component={DeptTreePage} />
       </Routes>
     </>
   );

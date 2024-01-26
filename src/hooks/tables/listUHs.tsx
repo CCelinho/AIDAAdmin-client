@@ -1,5 +1,5 @@
 import { useQuery } from '@apollo/client';
-import { graphql } from '../gql/gql';
+import { graphql } from '../../gql/gql';
 
 const listUHs = (offset?: number, limit?: number) => {
   const GET_UHS = graphql(/* GraphQL */ `
@@ -7,7 +7,6 @@ const listUHs = (offset?: number, limit?: number) => {
       uhs(offset: $offset, limit: $limit) {
         _id
         name
-        active
         partOf {
           display
         }
@@ -16,7 +15,6 @@ const listUHs = (offset?: number, limit?: number) => {
             text
           }
         }
-        VIG_FIM
       }
     }
   `);

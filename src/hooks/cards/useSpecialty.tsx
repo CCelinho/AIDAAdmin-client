@@ -1,5 +1,5 @@
 import { useQuery } from '@apollo/client';
-import { graphql } from '../gql/gql';
+import { graphql } from '../../gql/gql';
 import { useParams } from 'react-router';
 
 const useSpecialty = () => {

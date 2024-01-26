@@ -1,6 +1,6 @@
 import { columns } from '../components/table-columns/departmentColumns';
 import DataTable from '@/components/ui/data-table';
-import listDepartments from '../hooks/listDepartments';
+import listDepartments from '../hooks/tables/listDepartments';
 import SpinnerLoader from '@/components/loaders/spinner';
 
 export default function DepartmentList() {

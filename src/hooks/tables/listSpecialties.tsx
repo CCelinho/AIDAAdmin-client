@@ -8,7 +8,6 @@ const listSpecialties = (offset?: number, limit?: number) => {
         _id
         COD_ESTATISTICO
         DES_ESTATISTICO
-        active
         partOf {
           display
         }
@@ -17,7 +16,6 @@ const listSpecialties = (offset?: number, limit?: number) => {
             text
           }
         }
-        VIG_FIM
       }
     }
   `);

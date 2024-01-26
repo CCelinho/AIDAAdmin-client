@@ -1,5 +1,5 @@
 import { useQuery } from '@apollo/client';
-import { graphql } from '../gql/gql';
+import { graphql } from '../../gql/gql';
 
 const listDepartments = (offset?: number, limit?: number) => {
   const GET_DEPARTMENTS = graphql(/* GraphQL */ `
@@ -8,7 +8,6 @@ const listDepartments = (offset?: number, limit?: number) => {
         _id
         COD_DEPARTAMENTO
         DES_DEPARTAMENTO
-        active
         partOf {
           display
         }
@@ -17,7 +16,6 @@ const listDepartments = (offset?: number, limit?: number) => {
             text
           }
         }
-        VIG_FIM
       }
     }
   `);

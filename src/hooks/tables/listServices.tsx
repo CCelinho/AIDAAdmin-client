@@ -8,7 +8,6 @@ const listServices = (offset?: number, limit?: number) => {
         _id
         COD_SERVICO
         DES_SERVICO
-        active
         partOf {
           display
         }
@@ -17,7 +16,6 @@ const listServices = (offset?: number, limit?: number) => {
             text
           }
         }
-        VIG_FIM
       }
     }
   `);
