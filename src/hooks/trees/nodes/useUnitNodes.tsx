@@ -5,6 +5,9 @@ const useUnitNodes = (id: string) => {
   const GET_UNITNODES = graphql(`
     query GET_UNITNODES($id: ObjectId!) {
       unitById(id: $id) {
+        _id
+        active
+        name
         children {
           _id
           active

@@ -1,7 +1,7 @@
 import { Tree } from 'react-organizational-chart';
-import { Button } from '../ui/button';
+import { Button } from '../../ui/button';
 import { Link } from 'react-router-dom';
-import DepartmentNodes from './departmentNodes';
+import DepartmentNodes from '../nodes/departmentNodes';
 import { Get_UhrootQuery } from '@/gql/graphql';
 
 interface UHRootTreeProps {

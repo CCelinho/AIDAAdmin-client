@@ -24,6 +24,7 @@ const useUnit = () => {
           }
         }
         VIG_FIM
+        errorflag
       }
     }
   `);

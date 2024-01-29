@@ -2,13 +2,12 @@ import { useQuery } from '@apollo/client';
 import { graphql } from '../../gql/gql';
 import { useParams } from 'react-router';
 
-const useService = () => {
-  const GET_SERVICE = graphql(/* GraphQL */ `
-    query GET_SERVICE($id: ObjectId!) {
-      serviceById(id: $id) {
+const useUh = () => {
+  const GET_UH = graphql(/* GraphQL */ `
+    query GET_UH($id: ObjectId!) {
+      uhById(id: $id) {
         _id
-        COD_SERVICO
-        DES_SERVICO
+        name
         partOf {
           display
         }
@@ -30,11 +29,11 @@ const useService = () => {
   `);
 
   const { id } = useParams();
-  const { error, loading, data } = useQuery(GET_SERVICE, {
+  const { error, loading, data } = useQuery(GET_UH, {
     variables: { id: id },
   });
 
   return { error, loading, data };
 };
 
-export default useService;
+export default useUh;

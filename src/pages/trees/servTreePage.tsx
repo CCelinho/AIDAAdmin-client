@@ -1,9 +1,9 @@
 import Clip from '@/components/loaders/clip';
-import UHRootTree from '@/components/trees/uhRoot';
-import useUHRoot from '@/hooks/trees/useUHRoot';
+import ServRootTree from '@/components/trees/roots/serviceRoot';
+import useServRoot from '@/hooks/trees/roots/useServiceRoot';
 
-const UHTreePage: React.FC = () => {
-  const { error, loading, data } = useUHRoot();
+const ServTreePage: React.FC = () => {
+  const { error, loading, data } = useServRoot();
 
   if (loading) {
     return <Clip size={150} />;
@@ -15,7 +15,7 @@ const UHTreePage: React.FC = () => {
   if (data) {
     return (
       <div>
-        <UHRootTree data={data} />
+        <ServRootTree data={data} />
       </div>
     );
   } else {
@@ -23,4 +23,4 @@ const UHTreePage: React.FC = () => {
   }
 };
 
-export default UHTreePage;
+export default ServTreePage;

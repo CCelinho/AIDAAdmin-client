@@ -1,8 +1,8 @@
 import { Tree } from 'react-organizational-chart';
-import { Button } from '../ui/button';
+import { Button } from '../../ui/button';
 import { Link } from 'react-router-dom';
 import { Get_DeptrootQuery } from '@/gql/graphql';
-import ServiceNodes from './serviceNodes';
+import ServiceNodes from '../nodes/serviceNodes';
 
 interface DeptRootTreeProps {
   data: Get_DeptrootQuery;

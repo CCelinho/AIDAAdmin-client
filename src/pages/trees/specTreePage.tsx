@@ -1,9 +1,9 @@
 import Clip from '@/components/loaders/clip';
-import DeptRootTree from '@/components/trees/departmentRoot';
-import useDeptRoot from '@/hooks/trees/useDepartmentRoot';
+import SpecRootTree from '@/components/trees/roots/specialtyRoot';
+import useSpecRoot from '@/hooks/trees/roots/useSpecialtyRoot';
 
-const DeptTreePage: React.FC = () => {
-  const { error, loading, data } = useDeptRoot();
+const SpecTreePage: React.FC = () => {
+  const { error, loading, data } = useSpecRoot();
 
   if (loading) {
     return <Clip size={150} />;
@@ -15,7 +15,7 @@ const DeptTreePage: React.FC = () => {
   if (data) {
     return (
       <div>
-        <DeptRootTree data={data} />
+        <SpecRootTree data={data} />
       </div>
     );
   } else {
@@ -23,4 +23,4 @@ const DeptTreePage: React.FC = () => {
   }
 };
 
-export default DeptTreePage;
+export default SpecTreePage;

@@ -15,6 +15,24 @@ const useUnitRoot = () => {
           name
         }
       }
+
+      everythingByUnit(unitId: $id) {
+        service {
+          _id
+          active
+          name
+        }
+        department {
+          _id
+          active
+          name
+        }
+        uh {
+          _id
+          active
+          name
+        }
+      }
     }
   `);
 

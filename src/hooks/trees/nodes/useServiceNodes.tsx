@@ -5,10 +5,11 @@ const useServNodes = (id: string) => {
   const GET_SERVNODES = graphql(`
     query GET_SERVNODES($id: ObjectId!) {
       serviceById(id: $id) {
+        _id
+        active
+        name
         children {
           _id
-          active
-          name
         }
       }
     }

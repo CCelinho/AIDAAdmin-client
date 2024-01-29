@@ -5,10 +5,11 @@ const useDeptNodes = (id: string) => {
   const GET_DEPTNODES = graphql(`
     query GET_DEPTNODES($id: ObjectId!) {
       departmentById(id: $id) {
+        _id
+        active
+        name
         children {
           _id
-          active
-          name
         }
       }
     }

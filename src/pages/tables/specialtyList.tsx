@@ -1,6 +1,6 @@
-import { columns } from '../components/table-columns/specialtyColumns';
+import { columns } from '../../components/table-columns/specialtyColumns';
 import DataTable from '@/components/ui/data-table';
-import listSpecialties from '../hooks/tables/listSpecialties';
+import listSpecialties from '../../hooks/tables/listSpecialties';
 import { useEffect } from 'react';
 import SpinnerLoader from '@/components/loaders/spinner';
 

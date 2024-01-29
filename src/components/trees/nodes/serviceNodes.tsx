@@ -1,8 +1,8 @@
 import { TreeNode } from 'react-organizational-chart';
-import { Button } from '../ui/button';
+import { Button } from '../../ui/button';
 import { Link } from 'react-router-dom';
-import Clip from '../loaders/clip';
-import useServNodes from '@/hooks/trees/useServiceNodes';
+import Clip from '../../loaders/clip';
+import useServNodes from '@/hooks/trees/nodes/useServiceNodes';
 import UnitNodes from './unitNodes';
 
 export interface ServiceNodesProps {
@@ -25,19 +25,21 @@ const ServiceNodes: React.FC<ServiceNodesProps> = ({ id }) => {
   }
 
   const unis = data?.serviceById.children;
-  return unis?.map((uni) => {
-    return (
-      <TreeNode
-        label={
-          <Button variant={'outline'} size={'lg'}>
-            <Link to={`/unit/${uni?._id}`}>{uni?.name}</Link>
-          </Button>
-        }
-      >
-        <UnitNodes id={uni?._id} />
-      </TreeNode>
-    );
-  });
+  return (
+    <TreeNode
+      label={
+        <Button variant={'outline'} size={'lg'}>
+          <Link to={`/service/${data?.serviceById?._id}`}>
+            {data?.serviceById?.name}
+          </Link>
+        </Button>
+      }
+    >
+      {unis?.map((uni) => {
+        return <UnitNodes id={uni?._id} />;
+      })}
+    </TreeNode>
+  );
 };
 
 export default ServiceNodes;

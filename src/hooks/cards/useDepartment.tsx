@@ -24,6 +24,7 @@ const useDepartment = () => {
           }
         }
         VIG_FIM
+        errorflag
       }
     }
   `);

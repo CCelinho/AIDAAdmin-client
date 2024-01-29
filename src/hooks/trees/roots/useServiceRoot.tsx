@@ -15,6 +15,19 @@ const useServRoot = () => {
           name
         }
       }
+
+      everythingByServ(servId: $id) {
+        department {
+          _id
+          active
+          name
+        }
+        uh {
+          _id
+          active
+          name
+        }
+      }
     }
   `);
 

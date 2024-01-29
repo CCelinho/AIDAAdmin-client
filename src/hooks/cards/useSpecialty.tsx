@@ -24,6 +24,7 @@ const useSpecialty = () => {
           }
         }
         VIG_FIM
+        errorflag
       }
     }
   `);

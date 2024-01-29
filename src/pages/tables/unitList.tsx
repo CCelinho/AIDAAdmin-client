@@ -1,5 +1,5 @@
 import SpinnerLoader from '@/components/loaders/spinner';
-import { columns } from '../components/table-columns/unitColumns';
+import { columns } from '../../components/table-columns/unitColumns';
 import DataTable from '@/components/ui/data-table';
 import listUnits from '@/hooks/tables/listUnits';
 
