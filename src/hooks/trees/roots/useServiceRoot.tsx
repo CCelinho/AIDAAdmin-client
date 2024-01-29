@@ -9,6 +9,7 @@ const useServRoot = () => {
         _id
         active
         name
+        errorflag
         children {
           _id
           active
@@ -21,11 +22,13 @@ const useServRoot = () => {
           _id
           active
           name
+          errorflag
         }
         uh {
           _id
           active
           name
+          errorflag
         }
       }
     }

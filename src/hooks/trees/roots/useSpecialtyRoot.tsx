@@ -10,26 +10,31 @@ const useSpecRoot = () => {
           _id
           active
           name
+          errorflag
         }
         unit {
           _id
           active
           name
+          errorflag
         }
         service {
           _id
           active
           name
+          errorflag
         }
         department {
           _id
           active
           name
+          errorflag
         }
         uh {
           _id
           active
           name
+          errorflag
         }
       }
     }

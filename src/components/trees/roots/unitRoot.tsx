@@ -13,7 +13,12 @@ const UnitRootTree: React.FC<UnitRootTreeProps> = ({ data }) => {
   return (
     <Tree
       label={
-        <Button variant={'outline'} size={'lg'}>
+        <Button
+          variant={
+            data.everythingByUnit.uh?.errorflag ? 'destructive' : 'outline'
+          }
+          size={'lg'}
+        >
           <Link to={`/uh/${data?.everythingByUnit?.uh?._id}`}>
             {data?.everythingByUnit?.uh?.name}
           </Link>
@@ -22,7 +27,14 @@ const UnitRootTree: React.FC<UnitRootTreeProps> = ({ data }) => {
     >
       <TreeNode
         label={
-          <Button variant={'outline'} size={'lg'}>
+          <Button
+            variant={
+              data.everythingByUnit.department?.errorflag
+                ? 'destructive'
+                : 'outline'
+            }
+            size={'lg'}
+          >
             <Link to={`/department/${data?.everythingByUnit?.department?._id}`}>
               {data?.everythingByUnit?.department?.name}
             </Link>
@@ -31,7 +43,14 @@ const UnitRootTree: React.FC<UnitRootTreeProps> = ({ data }) => {
       >
         <TreeNode
           label={
-            <Button variant={'outline'} size={'lg'}>
+            <Button
+              variant={
+                data.everythingByUnit.service?.errorflag
+                  ? 'destructive'
+                  : 'outline'
+              }
+              size={'lg'}
+            >
               <Link to={`/service/${data?.everythingByUnit?.service?._id}`}>
                 {data?.everythingByUnit?.service?.name}
               </Link>
@@ -40,7 +59,10 @@ const UnitRootTree: React.FC<UnitRootTreeProps> = ({ data }) => {
         >
           <TreeNode
             label={
-              <Button variant={'outline'} size={'lg'}>
+              <Button
+                variant={data.unitById.errorflag ? 'destructive' : 'outline'}
+                size={'lg'}
+              >
                 <Link to={`/unit/${data?.unitById._id}`}>
                   {data?.unitById.name}
                 </Link>
@@ -51,7 +73,10 @@ const UnitRootTree: React.FC<UnitRootTreeProps> = ({ data }) => {
               return (
                 <TreeNode
                   label={
-                    <Button variant={'outline'} size={'lg'}>
+                    <Button
+                      variant={spe?.errorflag ? 'destructive' : 'outline'}
+                      size={'lg'}
+                    >
                       <Link to={`/specialty/${spe?._id}`}>{spe?.name}</Link>
                     </Button>
                   }

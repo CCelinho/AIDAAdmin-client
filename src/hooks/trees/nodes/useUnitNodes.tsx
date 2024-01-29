@@ -8,10 +8,12 @@ const useUnitNodes = (id: string) => {
         _id
         active
         name
+        errorflag
         children {
           _id
           active
           name
+          errorflag
         }
       }
     }

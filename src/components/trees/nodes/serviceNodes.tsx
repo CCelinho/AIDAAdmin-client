@@ -28,7 +28,10 @@ const ServiceNodes: React.FC<ServiceNodesProps> = ({ id }) => {
   return (
     <TreeNode
       label={
-        <Button variant={'outline'} size={'lg'}>
+        <Button
+          variant={data?.serviceById.errorflag ? 'destructive' : 'outline'}
+          size={'lg'}
+        >
           <Link to={`/service/${data?.serviceById?._id}`}>
             {data?.serviceById?.name}
           </Link>

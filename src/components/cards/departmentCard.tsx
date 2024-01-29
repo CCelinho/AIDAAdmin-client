@@ -19,6 +19,7 @@ export default function DepartmentCard({
   className,
   ...props
 }: React.PropsWithChildren<DepartmentCardProps>) {
+  console.log(data);
   return (
     <Card
       className={
@@ -44,6 +45,7 @@ export default function DepartmentCard({
             <br />
             Responsável: {data?.contact?.name?.text} <br />
             Contacto: {} <br />
+            ErrorFlag: {data?.errorflag}
           </p>
         </div>
       </CardContent>

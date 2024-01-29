@@ -38,7 +38,10 @@ const UnitNodes: React.FC<UnitNodesProps> = ({ id }) => {
         return (
           <TreeNode
             label={
-              <Button variant={'outline'} size={'lg'}>
+              <Button
+                variant={spe?.errorflag === true ? 'destructive' : 'outline'}
+                size={'lg'}
+              >
                 <Link to={`/specialty/${spe?._id}`}>{spe?.name}</Link>
               </Button>
             }

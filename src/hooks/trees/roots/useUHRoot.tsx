@@ -9,10 +9,12 @@ const useUHRoot = () => {
         _id
         active
         UH
+        errorflag
         children {
           _id
           active
           name
+          errorflag
         }
       }
     }

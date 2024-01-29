@@ -14,7 +14,12 @@ const ServRootTree: React.FC<ServRootTreeProps> = ({ data }) => {
   return (
     <Tree
       label={
-        <Button variant={'outline'} size={'lg'}>
+        <Button
+          variant={
+            data.everythingByServ.uh?.errorflag ? 'destructive' : 'outline'
+          }
+          size={'lg'}
+        >
           <Link to={`/uh/${data?.everythingByServ.uh?._id}`}>
             {data?.everythingByServ.uh?.name}
           </Link>
@@ -23,7 +28,14 @@ const ServRootTree: React.FC<ServRootTreeProps> = ({ data }) => {
     >
       <TreeNode
         label={
-          <Button variant={'outline'} size={'lg'}>
+          <Button
+            variant={
+              data.everythingByServ.department?.errorflag
+                ? 'destructive'
+                : 'outline'
+            }
+            size={'lg'}
+          >
             <Link to={`/department/${data?.everythingByServ.department?._id}`}>
               {data?.everythingByServ.department?.name}
             </Link>
@@ -32,7 +44,10 @@ const ServRootTree: React.FC<ServRootTreeProps> = ({ data }) => {
       >
         <TreeNode
           label={
-            <Button variant={'outline'} size={'lg'}>
+            <Button
+              variant={data.serviceById.errorflag ? 'destructive' : 'outline'}
+              size={'lg'}
+            >
               <Link to={`/service/${data?.serviceById._id}`}>
                 {data?.serviceById.name}
               </Link>

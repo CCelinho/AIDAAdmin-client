@@ -9,10 +9,12 @@ const useDeptRoot = () => {
         _id
         active
         name
+        errorflag
         children {
           _id
           active
           name
+          errorflag
         }
       }
     }

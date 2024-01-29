@@ -2,11 +2,11 @@ import { useState } from 'react';
 import { Input } from '../ui/input';
 import { Button } from '../ui/button';
 
-interface SearchbarProps {
+interface TableSearchbarProps {
   onSearch: (query: string) => void;
 }
 
-const Searchbar: React.FC<SearchbarProps> = ({ onSearch }) => {
+const TableSearchbar: React.FC<TableSearchbarProps> = ({ onSearch }) => {
   const [searchString, setSearchString] = useState('');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -34,4 +34,4 @@ const Searchbar: React.FC<SearchbarProps> = ({ onSearch }) => {
   );
 };
 
-export default Searchbar;
+export default TableSearchbar;

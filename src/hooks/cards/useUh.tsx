@@ -29,9 +29,11 @@ const useUh = () => {
   `);
 
   const { id } = useParams();
+
   const { error, loading, data } = useQuery(GET_UH, {
     variables: { id: id },
   });
+  console.log(data?.uhById.errorflag);
 
   return { error, loading, data };
 };

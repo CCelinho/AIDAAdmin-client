@@ -14,7 +14,10 @@ const DeptRootTree: React.FC<DeptRootTreeProps> = ({ data }) => {
   return (
     <Tree
       label={
-        <Button variant={'outline'} size={'lg'}>
+        <Button
+          variant={data.departmentById.errorflag ? 'destructive' : 'outline'}
+          size={'lg'}
+        >
           <Link to={`/department/${data?.departmentById._id}`}>
             {data?.departmentById.name}
           </Link>

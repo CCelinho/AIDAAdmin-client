@@ -9,12 +9,13 @@ interface UHRootTreeProps {
 }
 
 const UHRootTree: React.FC<UHRootTreeProps> = ({ data }) => {
-  const deps = data?.uhById.children;
+  const deps = data.uhById.children;
+  const flag = data.uhById.errorflag;
 
   return (
     <Tree
       label={
-        <Button variant={'outline'} size={'lg'}>
+        <Button variant={flag ? 'destructive' : 'outline'} size={'lg'}>
           <Link to={`/uh/${data?.uhById._id}`}>{data?.uhById.UH}</Link>
         </Button>
       }

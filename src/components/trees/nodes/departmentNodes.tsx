@@ -28,7 +28,12 @@ const DepartmentNodes: React.FC<DepartmentNodesProps> = ({ id }) => {
   return (
     <TreeNode
       label={
-        <Button variant={'outline'} size={'lg'}>
+        <Button
+          variant={
+            data?.departmentById.errorflag === true ? 'destructive' : 'outline'
+          }
+          size={'lg'}
+        >
           <Link to={`/department/${data?.departmentById?._id}`}>
             {data?.departmentById?.name}
           </Link>

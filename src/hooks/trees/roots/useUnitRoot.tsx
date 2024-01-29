@@ -9,10 +9,12 @@ const useUnitRoot = () => {
         _id
         active
         name
+        errorflag
         children {
           _id
           active
           name
+          errorflag
         }
       }
 
@@ -21,16 +23,19 @@ const useUnitRoot = () => {
           _id
           active
           name
+          errorflag
         }
         department {
           _id
           active
           name
+          errorflag
         }
         uh {
           _id
           active
           name
+          errorflag
         }
       }
     }

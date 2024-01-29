@@ -8,6 +8,7 @@ const useDeptNodes = (id: string) => {
         _id
         active
         name
+        errorflag
         children {
           _id
         }
