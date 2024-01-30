@@ -4,6 +4,6 @@ AIDAAdmin is an all-in-one dashboard designed for hospital personnel use to view
 
 This repository contains the client for the "Orgs" module of the AIDAAdmin application and is still under development.
 
-<img alt='App Screenshot' src='https://i.imgur.com/OzsxdqS.png' width=80%>
+<img alt='App Screenshot' src='https://i.imgur.com/OzsxdqS.png' width=100%>
 
 This project was created using Vite and runs on ApolloClient with React + Typescript and GraphQL communication.
