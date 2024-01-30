@@ -4,12 +4,21 @@ import App from './App';
 import './index.css';
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 import { BrowserRouter } from 'react-router-dom';
+import { offsetLimitPagination } from '@apollo/client/utilities';
 
 const port = 4000;
 
 const client = new ApolloClient({
   uri: `http://localhost:${port}/graphql`,
-  cache: new InMemoryCache(),
+  cache: new InMemoryCache({
+    typePolicies: {
+      Query: {
+        fields: {
+          specialties: offsetLimitPagination(),
+        },
+      },
+    },
+  }),
 });
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
