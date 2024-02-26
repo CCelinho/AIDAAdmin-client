@@ -1,49 +1,41 @@
 import { graphql } from '@/gql';
 import { useQuery } from '@apollo/client';
+import { useParams } from 'react-router-dom';
 
-const searchQuery = (searchString: string) => {
+const searchQuery = () => {
   const SEARCH = graphql(`
     query SEARCH($searchString: String!) {
       textSearch(searchString: $searchString) {
-        uhs {
+        ... on UH {
           _id
-          VIG_FIM
           name
           partOf {
             display
           }
         }
-        departments {
+        ... on Department {
           _id
-          COD_DEPARTAMENTO
-          VIG_FIM
           name
           partOf {
             display
           }
         }
-        services {
+        ... on Service {
           _id
-          COD_SERVICO
-          VIG_FIM
           name
           partOf {
             display
           }
         }
-        units {
+        ... on Unit {
           _id
-          COD_UNIDADE
-          VIG_FIM
           name
           partOf {
             display
           }
         }
-        specialties {
+        ... on Specialty {
           _id
-          COD_ESTATISTICO
-          VIG_FIM
           name
           partOf {
             display
@@ -53,11 +45,15 @@ const searchQuery = (searchString: string) => {
     }
   `);
 
+  const searchString = useParams();
+
   const { error, loading, data } = useQuery(SEARCH, {
-    variables: { searchString: searchString },
+    variables: { searchString: searchString.str ? searchString.str : '' },
   });
 
-  return { error, loading, data };
+  const orgs = data?.textSearch || [];
+
+  return { error, loading, orgs };
 };
 
 export default searchQuery;

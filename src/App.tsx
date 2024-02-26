@@ -16,14 +16,18 @@ import ServiceCardPage from './pages/cards/servCardPage';
 import UnitCardPage from './pages/cards/unitCardPage';
 import SpecialtyCardPage from './pages/cards/specCardPage';
 import OrganizationList from './pages/tables/organizationList';
+import LandingPage from './pages/LandingPage';
+import searchResultList from './pages/tables/searchResultList';
 
 function App() {
   return (
     <>
       <Topbar />
       <Routes>
+        <Route path="" Component={LandingPage} />
         // Tables
         <Route path="/search" Component={OrganizationList} />
+        <Route path="/search-result/:str" Component={searchResultList} />
         <Route path="/uhs" Component={UHList} />
         <Route path="/departments" Component={DepartmentList} />
         <Route path="/services" Component={ServiceList} />

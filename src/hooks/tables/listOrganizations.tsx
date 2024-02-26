@@ -1,7 +1,7 @@
 import { graphql } from '@/gql';
 import { useQuery } from '@apollo/client';
 
-const useOrgsQuery = (offset: number, limit: number) => {
+const useOrgsQuery = (offset?: number, limit?: number) => {
   const GETORGS = graphql(`
     query GETORGS($offset: Int, $limit: Int) {
       orgs(offset: $offset, limit: $limit) {

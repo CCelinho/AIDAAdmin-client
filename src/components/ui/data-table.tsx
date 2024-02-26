@@ -26,14 +26,18 @@ import { TablePagination } from './tablePagination';
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
   data: TData[];
+  initFilter?: string;
 }
 
 export default function DataTable<TData, TValue>({
   columns,
   data,
+  initFilter,
 }: DataTableProps<TData, TValue>) {
   const [sorting, setSorting] = useState<SortingState>([]);
-  const [globalFilter, setGlobalFilter] = useState('');
+  const [globalFilter, setGlobalFilter] = initFilter
+    ? useState(initFilter)
+    : useState('');
 
   const table = useReactTable({
     data,
