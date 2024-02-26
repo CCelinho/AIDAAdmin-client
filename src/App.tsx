@@ -15,6 +15,7 @@ import DepartmentCardPage from './pages/cards/deptCardPage';
 import ServiceCardPage from './pages/cards/servCardPage';
 import UnitCardPage from './pages/cards/unitCardPage';
 import SpecialtyCardPage from './pages/cards/specCardPage';
+import OrganizationList from './pages/tables/organizationList';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
       <Topbar />
       <Routes>
         // Tables
+        <Route path="/search" Component={OrganizationList} />
         <Route path="/uhs" Component={UHList} />
         <Route path="/departments" Component={DepartmentList} />
         <Route path="/services" Component={ServiceList} />
